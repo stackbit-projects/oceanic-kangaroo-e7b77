@@ -1,0 +1,88 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  post:
+    type: page
+    label: Post
+    folder: _posts
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: author
+        label: Author
+      - type: list
+        name: categories
+        label: Categories
+        items:
+          type: string
+      - type: image
+        name: image
+        label: Image
+  page:
+    type: page
+    label: Page
+    folder: pages
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: image
+        name: image
+        label: Image
+      - type: boolean
+        name: comments
+        label: Comments
+  menus:
+    type: data
+    label: Menus
+    file: menus.yml
+    fields:
+      - type: list
+        name: topmenu
+        label: Topmenu
+        items:
+          type: object
+          fields:
+            - type: string
+              name: title
+              label: Title
+            - type: string
+              name: url
+              label: Url
+            - type: string
+              name: class
+              label: Class
+            - type: boolean
+              name: external
+              label: External
+      - type: list
+        name: footermenu
+        label: Footermenu
+        items:
+          type: object
+          fields:
+            - type: string
+              name: title
+              label: Title
+            - type: string
+              name: url
+              label: Url
+            - type: boolean
+              name: external
+              label: External
